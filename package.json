@@ -1,0 +1,9 @@
+{
+  "name": "amigo-ai-tools",
+  "version": "0.0.1",
+  "description": "Amigo shareable Claude Code skills and AI tools",
+  "private": true,
+  "scripts": {
+    "install:skills": "bash scripts/install-skills.sh"
+  }
+}
