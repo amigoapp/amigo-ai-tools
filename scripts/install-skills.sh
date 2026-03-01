@@ -26,9 +26,11 @@ trap cleanup EXIT
 echo "→ Copying shared files to skill references..."
 for skill in "${SKILLS[@]}"; do
   dest="skills/$skill/references"
-  mkdir -p "$dest"
   for file in "${SHARED_FILES[@]}"; do
-    cp "$SHARED_DIR/$file" "$dest/$file"
+    if grep -q "references/$file" "skills/$skill/SKILL.md" 2>/dev/null; then
+      mkdir -p "$dest"
+      cp "$SHARED_DIR/$file" "$dest/$file"
+    fi
   done
 done
 
