@@ -29,7 +29,14 @@ Non-security code quality rules applicable across Python, Node.js/Express, and N
 - **Undocumented public APIs**: Public functions, classes, or route handlers with non-obvious parameters or return values and no JSDoc/docstring.
 - **Complex logic without comments**: Non-trivial algorithms, regex patterns, or business rules with no inline explanation.
 
-## 6. Testing
+## 6. File Naming
+
+- **Mismatched responsibility**: The file name does not reflect its primary export or responsibility (e.g., a file named `utils.ts` that exclusively defines a `UserAuthService`, or `helpers.js` that contains unrelated domain logic mixed together).
+- **Wrong naming convention for the layer**: File names do not follow the expected convention for their role in the project (e.g., a NestJS controller named `user.ts` instead of `user.controller.ts`; a React component file named `userCard.tsx` instead of `UserCard.tsx` or `user-card.tsx` per project convention; a Python module named `UserService.py` instead of `user_service.py`).
+- **Vague or generic names**: File names like `index`, `common`, `misc`, `stuff`, or `helpers` used for files that contain cohesive, domain-specific logic that deserves a precise name.
+- **Case/format inconsistency**: Mixed casing or delimiter styles across files of the same type in the same directory (e.g., `userService.ts` alongside `product-service.ts` in the same layer; `user_service.py` alongside `UserRepository.py` in the same Python package).
+
+## 7. Testing
 
 - **Untested public functions**: New public functions or methods added without corresponding test coverage. Flag only if a test directory exists in the project (do not flag if no tests exist at all).
 - **Assertions missing**: Test files that contain `describe`/`it`/`test` blocks with no assertions inside them (empty or pending tests committed).
