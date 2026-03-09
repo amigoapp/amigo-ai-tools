@@ -1,6 +1,6 @@
 # Review Output Format
 
-Use this format for all review skill outputs: `pr-review`, `branch-review`, and `base-code-review`.
+Use this format for all `code-review` skill outputs.
 
 ## Report Structure
 
@@ -11,7 +11,7 @@ Render as a blockquote so it stands out visually:
 ```
 **Review Summary**
 
-> - Skill: [pr-review | branch-review | base-code-review]
+> - Skill: code-review (mode: PR | Branch | Codebase)
 > - Target: [PR #NNN | branch-name vs main | /path/to/scope]
 > - Detected Stack: [Python | Node.js+Express | NestJS | Unknown]
 > - Score: [🔴 0–5 | 🟡 6–7 | 🟢 8–10] X/10
